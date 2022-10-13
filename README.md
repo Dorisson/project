@@ -33,3 +33,5 @@ divide code in significant blocks and describe what each of them does
 give some examples from the code
 note important details of the user input
 explain the output
+
+## Errors and debugging
