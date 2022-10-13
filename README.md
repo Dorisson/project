@@ -26,3 +26,10 @@ Some applications require the access to a larger block of structural information
 
 ### Available tools for Python programming language
 
+### Why use PDB Cut and Transpose?
+
+## How does it work?
+divide code in significant blocks and describe what each of them does
+give some examples from the code
+note important details of the user input
+explain the output
