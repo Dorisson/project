@@ -5,21 +5,24 @@ and generates a new PDB file containing the environment in the radius selected b
 ## What is a pdb file?
 The Protein Data Bank (pdb) file format is a textual file format describing the three-dimensional structures of molecules held in the Protein Data Bank. Structural biologists use methods such as X-ray crystallography, NMR spectroscopy, and cryo-electron microscopy to determine the location of each atom relative to each other in the molecule, and then deposit this information, which becomes publically available. The pdb format accordingly provides for description and annotation of protein and nucleic acid structures including atomic coordinates, secondary structure assignments, as well as atomic connectivity. 
 
-## What is the format of a pdb file?
+### What is the format of a pdb file?
 A pdb file usually contains:
-### HEADER, TITLE and AUTHOR records
+#### HEADER, TITLE and AUTHOR records
 provide information about the researchers who defined the structure; numerous other types of records are available to provide other types of information.
-### REMARK records
+#### REMARK records
 can contain free-form annotation, but they also accommodate standardized information.
-### SEQRES records
+#### SEQRES records
 give the sequences of the three peptide chains (named A, B and C).
-### ATOM records
+#### ATOM records
 describe the coordinates of the atoms that are part of the protein, as well as the occupancy, temperature factor, and the element name, respectively.
-### HETATM records
+#### HETATM records
 describe coordinates of hetero-atoms, that is those atoms which are not part of the protein molecule, for example, atoms of ligands or metal co-factors.
 
 This program particularly focuses on ATOM and HETATM records. 
 
-## Challenges of working with pdb structures
-In a typical entry, you will find a diverse mixture of biological molecules, small molecules, ions, and water. Often, you can use the names and chain IDs to help sort these out. However, PDB files can contain up to 80 columns and thousands of lines of categorized structural information, hence extracting desired information manually can be a tideous process. For most applications, PDB files can be accessed via visualization tools, which read in the PDB file and display the protein structure. These programs also include analysis tools that allow you to measure distances and bond angles, and identify interesting structural features. 
-Some applications require the access to a larager block of structural information, often containing some number values.
+## Working with pdb structures
+In a typical entry, you will find a diverse mixture of biological molecules, small molecules, ions, and water. Often, you can use the names and chain IDs to help sort these out. However, pdb files can contain up to 80 columns and thousands of lines of categorized structural information, hence extracting desired information manually can be a tideous process. For most applications, PDB files can be accessed via visualization tools, which read in the PDB file and display the protein structure. These programs also include analysis tools that allow you to measure distances and bond angles, and identify interesting structural features. 
+Some applications require the access to a larger block of structural information, often related to atomic records and containing some number values, which need to be extracted and/or manipulated. Whether that involves simple appending/deleting of information, or maybe various mathematical operations, a little knowledge in coding can go a long way in helping you deal with pdb files. 
+
+### Available tools for Python programming language
+
