@@ -77,9 +77,11 @@ Finding cofactors...
 
 1 FE 3062 HEM A -6.173 -9.655 -1.561
 
-Last three columns represent the xyz co-ordinates. Make sure that you copy these EXACT values in the next step!
+Last three columns represent the xyz coordinates. Make sure that you copy these EXACT values in the next step!
 ```
+The user needs to type in the exact coordinates (because the table main contain more than one cofactor):
 
+```
 Specify the co-ordinates of the desired co-factor!
 x-coordinates: 
 -6.173
@@ -87,8 +89,16 @@ y-coordinates:
 -9.655
 z-coordinates: 
 -1.561
+```
+Next thing to do is to select the radius by entering a number value:
+
+```
 Select the radius of the co-factor environment in Ångstroms (note: only number values are accepted!): 
 3
+```
+The program returns the output containing atoms and heteroatoms within the selected radius:
+
+```
      record_name  atom_number blank_1 atom_name alt_loc residue_name blank_2 chain_id  residue_number  ... y_coord z_coord  occupancy  b_factor  blank_4  segment_id  element_symbol charge line_idx
 2663        ATOM         2664                SG                  CYS                A             354  ... -10.780   0.166        1.0     11.74                                    S    NaN     3080
 0         HETATM         3062                FE                  HEM                A            1407  ...  -9.655  -1.561        1.0     11.03                                   FE    NaN     3478
@@ -99,9 +109,17 @@ Select the radius of the co-factor environment in Ångstroms (note: only number 
 45        HETATM         3107                N3                  PIM                A            1408  ...  -8.239  -3.025        1.0     14.45                                    N    NaN     3523
 
 [7 rows x 21 columns]
+```
+To transpose the coordinates and save the output to a .csv file, the user needs to enter 'y':
+
+```
 Would you like to generate a csv table with transposed co-ordinates (set center to x,y,z = 0,0,0)?: y/n
 y
 Saving CSV table as: 1odo_3Å_radius_ref_point_0_0_0.csv
+```
+Finally, the new PDB file containing only structural informations of elements within the selected radius is created:
+
+```
 Your new PDB file is saved in your current directory as: 1odo_3Å_radius_ref_point_-6.173_-9.655_-1.561.pdb
 ```
 
