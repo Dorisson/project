@@ -1,4 +1,4 @@
-# PDB Cut and Transpose
+# pdb-cofactor-scissor
 This program extrapolates co-ordinates of atoms in relation to a metal co-factor
 and generates a new PDB file containing the environment in the radius selected by the user. 
 
@@ -31,10 +31,22 @@ Did you know that: Python is frequently used to manipulate pdb files? In fact, o
 `pdb-cofactor-scissor` is designed to help you extract the information about the co-factor(s) present in your protein structure without the need to manually handle a huge amount of structural information contained in pdb files. It can be used in applications where you are interested in treating the co-factor as a center of your biomolecule, and/or studying a very narrow environment surrounding the co-factor, which is likely ranging from 2 to 10 Å. The idea for this program came from the pipeline for EXAFS modeling, which involves placing the absorbing metal in the center (xyz = 0, 0, 0) and calculating the scattering wave functions of the elements in the vicinity of the metal which will be use for fitting of the original data, with the highest fidelity for distances within 5 Å.
 
 ## How does it work?
-` python project.py 
-Let's prepare your PDB file for EXAFS modeling
+
+Start the program by calling the script using `python`:
+
+```
+$ python project.py 
+```
+Type in the 4-character PDB code under which the protein structure is deposed in the Protein Data Bank:
+
+```
+Hi, this is pdb-cofactor-scissor! I help you study the metal co-factors in your protein structure!
 Type in a 4-character PDB code: 
 1odo
+```
+The program returns some information about the pdb file and its contents:
+
+```
 PDB Code: 
 PDB Header Line: 
 
@@ -54,9 +66,20 @@ SOURCE   2 ORGANISM_SCIENTIFIC: STREPTOMYCES COELICOLOR;
 SOURCE   3 ORGANISM_TAXID: 100226;                                              
 SOURCE   4 STRAIN: A3(2);   
 ...
+```
+The program starts searching for co-factors and it writes them out as a table: 
+
+```
+The most common co-factors found in human proteins are: 
+ iron, magnesium, manganese, cobalt, copper, zinc, and molybdenum.
+
 Finding cofactors...
+
 1 FE 3062 HEM A -6.173 -9.655 -1.561
+
 Last three columns represent the xyz co-ordinates. Make sure that you copy these EXACT values in the next step!
+```
+
 Specify the co-ordinates of the desired co-factor!
 x-coordinates: 
 -6.173
@@ -79,6 +102,7 @@ Select the radius of the co-factor environment in Ångstroms (note: only number 
 Would you like to generate a csv table with transposed co-ordinates (set center to x,y,z = 0,0,0)?: y/n
 y
 Saving CSV table as: 1odo_3Å_radius_ref_point_0_0_0.csv
-Your new PDB file is saved in your current directory as: 1odo_3Å_radius_ref_point_-6.173_-9.655_-1.561.pdb `
+Your new PDB file is saved in your current directory as: 1odo_3Å_radius_ref_point_-6.173_-9.655_-1.561.pdb
+```
 
 ## Errors and debugging
