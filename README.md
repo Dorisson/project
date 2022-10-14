@@ -4,8 +4,29 @@ and generates a new PDB file containing the environment in the radius selected b
 
 ## Before you start:
 Make sure you have all the modules needed to run the scripts in Python.
-You will need to install:
-`pandas` and particularlly, `biopandas`
+You will need to instal `biopandas`.
+
+BioPandas requires the following software and packages:
+
+Python >= 3.7
+NumPy >= 1.11.2
+SciPy >= 0.18.1
+Pandas >= 0.19.1
+PyPI
+
+You can install the latest stable release of biopandas directly from Python's package index via pip by executing the following code from your command line:
+
+`pip install biopandas`
+  
+Versions of biopandas are now also available via conda-forge; you can install it via
+
+`conda install biopandas -c conda-forge`
+
+or simply
+
+`conda install biopandas`
+
+if you have conda-forge already added to your channels.
 
 ## What is a pdb file?
 The Protein Data Bank (pdb) file format is a textual file format describing the three-dimensional structures of molecules held in the Protein Data Bank. Structural biologists use methods such as X-ray crystallography, NMR spectroscopy, and cryo-electron microscopy to determine the location of each atom relative to each other in the molecule, and then deposit this information, which becomes publically available. The pdb format accordingly provides for description and annotation of protein and nucleic acid structures including atomic coordinates, secondary structure assignments, as well as atomic connectivity. 
