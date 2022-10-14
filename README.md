@@ -31,7 +31,7 @@ Did you know that: Python is frequently used to manipulate pdb files? In fact, o
 `pdb-cofactor-scissor` is designed to help you extract the information about the co-factor(s) present in your protein structure without the need to manually handle a huge amount of structural information contained in pdb files. It can be used in applications where you are interested in treating the co-factor as a center of your biomolecule, and/or studying a very narrow environment surrounding the co-factor, which is likely ranging from 2 to 10 Å. The idea for this program came from the pipeline for EXAFS modeling, which involves placing the absorbing metal in the center (xyz = 0, 0, 0) and calculating the scattering wave functions of the elements in the vicinity of the metal which will be use for fitting of the original data, with the highest fidelity for distances within 5 Å.
 
 ## How does it work?
-`python project.py 
+` python project.py 
 Let's prepare your PDB file for EXAFS modeling
 Type in a 4-character PDB code: 
 1odo
