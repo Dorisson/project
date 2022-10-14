@@ -2,6 +2,11 @@
 This program extrapolates co-ordinates of atoms in relation to a metal co-factor
 and generates a new PDB file containing the environment in the radius selected by the user. 
 
+## Before you start:
+Make sure you have all the modules needed to run the scripts in Python.
+You will need to install:
+`pandas` and particularlly, `biopandas`
+
 ## What is a pdb file?
 The Protein Data Bank (pdb) file format is a textual file format describing the three-dimensional structures of molecules held in the Protein Data Bank. Structural biologists use methods such as X-ray crystallography, NMR spectroscopy, and cryo-electron microscopy to determine the location of each atom relative to each other in the molecule, and then deposit this information, which becomes publically available. The pdb format accordingly provides for description and annotation of protein and nucleic acid structures including atomic coordinates, secondary structure assignments, as well as atomic connectivity. 
 
