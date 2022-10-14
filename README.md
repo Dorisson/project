@@ -31,9 +31,54 @@ Did you know that: Python is frequently used to manipulate pdb files? In fact, o
 `pdb-cofactor-scissor` is designed to help you extract the information about the co-factor(s) present in your protein structure without the need to manually handle a huge amount of structural information contained in pdb files. It can be used in applications where you are interested in treating the co-factor as a center of your biomolecule, and/or studying a very narrow environment surrounding the co-factor, which is likely ranging from 2 to 10 Å. The idea for this program came from the pipeline for EXAFS modeling, which involves placing the absorbing metal in the center (xyz = 0, 0, 0) and calculating the scattering wave functions of the elements in the vicinity of the metal which will be use for fitting of the original data, with the highest fidelity for distances within 5 Å.
 
 ## How does it work?
-divide code in significant blocks and describe what each of them does
-give some examples from the code
-note important details of the user input
-explain the output
+`python project.py 
+Let's prepare your PDB file for EXAFS modeling
+Type in a 4-character PDB code: 
+1odo
+PDB Code: 
+PDB Header Line: 
+
+Raw PDB file contents:
+
+HEADER    OXIDOREDUCTASE                          19-FEB-03   1ODO              
+TITLE     1.85 A STRUCTURE OF CYP154A1 FROM STREPTOMYCES COELICOLOR             
+TITLE    2 A3(2)                                                                
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: PUTATIVE CYTOCHROME P450 154A1;                            
+COMPND   3 CHAIN: A;                                                            
+COMPND   4 SYNONYM: CYP154A1, SCO2884, SCE6.21;                                 
+COMPND   5 ENGINEERED: YES;                                                     
+COMPND   6 OTHER_DETAILS: HEME CONTAINING PROTEIN                               
+SOURCE    MOL_ID: 1;                                                            
+SOURCE   2 ORGANISM_SCIENTIFIC: STREPTOMYCES COELICOLOR;                        
+SOURCE   3 ORGANISM_TAXID: 100226;                                              
+SOURCE   4 STRAIN: A3(2);   
+...
+Finding cofactors...
+1 FE 3062 HEM A -6.173 -9.655 -1.561
+Last three columns represent the xyz co-ordinates. Make sure that you copy these EXACT values in the next step!
+Specify the co-ordinates of the desired co-factor!
+x-coordinates: 
+-6.173
+y-coordinates: 
+-9.655
+z-coordinates: 
+-1.561
+Select the radius of the co-factor environment in Ångstroms (note: only number values are accepted!): 
+3
+     record_name  atom_number blank_1 atom_name alt_loc residue_name blank_2 chain_id  residue_number  ... y_coord z_coord  occupancy  b_factor  blank_4  segment_id  element_symbol charge line_idx
+2663        ATOM         2664                SG                  CYS                A             354  ... -10.780   0.166        1.0     11.74                                    S    NaN     3080
+0         HETATM         3062                FE                  HEM                A            1407  ...  -9.655  -1.561        1.0     11.03                                   FE    NaN     3478
+5         HETATM         3067                NA                  HEM                A            1407  ... -10.255  -3.043        1.0     11.11                                    N    NaN     3483
+16        HETATM         3078                NB                  HEM                A            1407  ...  -8.155  -1.070        1.0     10.62                                    N    NaN     3494
+24        HETATM         3086                NC                  HEM                A            1407  ...  -9.045  -0.102        1.0     10.01                                    N    NaN     3502
+32        HETATM         3094                ND                  HEM                A            1407  ... -11.085  -2.049        1.0     11.20                                    N    NaN     3510
+45        HETATM         3107                N3                  PIM                A            1408  ...  -8.239  -3.025        1.0     14.45                                    N    NaN     3523
+
+[7 rows x 21 columns]
+Would you like to generate a csv table with transposed co-ordinates (set center to x,y,z = 0,0,0)?: y/n
+y
+Saving CSV table as: 1odo_3Å_radius_ref_point_0_0_0.csv
+Your new PDB file is saved in your current directory as: 1odo_3Å_radius_ref_point_-6.173_-9.655_-1.561.pdb `
 
 ## Errors and debugging
