@@ -35,7 +35,7 @@ Did you know that: Python is frequently used to manipulate pdb files? In fact, o
 Start the program by calling the script using `python`:
 
 ```
-$ python project.py 
+$ python pdb-cofactor-scissor.py 
 ```
 Type in the 4-character PDB code under which the protein structure is deposed in the Protein Data Bank:
 
