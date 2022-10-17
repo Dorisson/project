@@ -151,3 +151,7 @@ Your new PDB file is saved in your current directory as: 1odo_3Å_radius_ref_poi
 
 ## Errors and debugging
 The current program version is not applying the radius cutoff when saving a new pdb file. I am developing a side code that would approach this problem in a better way and avoid dealing with the dataframe but instead use `set-structure` from `Bio` module. Other possible alterations and upgrades are indicated in the script. Also, for some reason, the program simply fails when entering some valid PDB codes. To test the program, try using codes '1odo' and '1kzy'.
+
+
+## Update
+The code is now applying the radius cutoff when saving the pdb file.
