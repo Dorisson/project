@@ -165,7 +165,6 @@ else:
 ppdb.df['ATOM']= ppdb.df['ATOM'][distances_atm < float(A)] 
 ppdb.df['HETATM'][distances_hetatm < float(A)]    
     
-# OBS! This part doesn not seem to create the cutoff as it should!
 # Writing the new PDB containing atoms within the desired radius
 ppdb.to_pdb(path=f'{your_code}_{A}Å_radius_ref_point_{x}_{y}_{z}.pdb', records=None, 
             gz=False, 
